@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>穴場ホワイト企業ナビ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">転職者向け・無料企業研究データベース</p>
+
+        <h1>穴場ホワイト企業ナビ</h1>
+
+        <p class="lead">
+          知名度だけでは見つからない、公開データで見る
+          <br />
+          「働きやすさ注目企業」を探せるWebアプリ。
+        </p>
+
+        <div class="hero-actions">
+          <a href="#companies" class="primary-button">企業を探す</a>
+          <button id="contactTopButton" class="secondary-button">
+            掲載・修正依頼
+          </button>
+        </div>
+
+        <div class="notice">
+          ※ 掲載情報はサンプルです。実在企業データに置き換えて使います。
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="summary-section">
+        <div class="summary-card">
+          <span class="summary-label">掲載企業</span>
+          <strong id="totalCount">0</strong>
+          <span>社</span>
+        </div>
+
+        <div class="summary-card">
+          <span class="summary-label">平均ホワイト度</span>
+          <strong id="avgWhiteScore">0</strong>
+          <span>点</span>
+        </div>
+
+        <div class="summary-card">
+          <span class="summary-label">平均穴場度</span>
+          <strong id="avgHiddenScore">0</strong>
+          <span>点</span>
+        </div>
+      </section>
+
+      <section id="companies" class="content-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Ranking & Search</p>
+            <h2>穴場ホワイト企業ランキング</h2>
+          </div>
+
+          <button id="contactButton" class="small-button">
+            企業掲載・修正依頼
+          </button>
+        </div>
+
+        <div class="filter-panel">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="企業名・地域・職種・特徴で検索"
+          />
+
+          <select id="cityFilter">
+            <option value="">地域すべて</option>
+          </select>
+
+          <select id="industryFilter">
+            <option value="">業界すべて</option>
+          </select>
+
+          <select id="jobFilter">
+            <option value="">職種すべて</option>
+          </select>
+
+          <select id="sortSelect">
+            <option value="hiddenScore">穴場度が高い順</option>
+            <option value="whiteScore">ホワイト度が高い順</option>
+            <option value="name">企業名順</option>
+          </select>
+
+          <button id="favoriteOnlyButton" class="filter-button">
+            お気に入りのみ
+          </button>
+
+          <button id="resetButton" class="filter-button light">
+            条件クリア
+          </button>
+        </div>
+
+        <div id="companyList" class="company-grid"></div>
+
+        <div id="emptyState" class="empty-state">
+          条件に合う企業が見つかりませんでした。
+        </div>
+      </section>
+
+      <section class="content-section info-section">
+        <h2>このサイトについて</h2>
+
+        <p>
+          このWebアプリは、転職者が「知名度は高くないけれど、働きやすさの指標が良さそうな企業」を探すための企業研究ツールです。
+        </p>
+
+        <p>
+          ホワイト度・穴場度は、公開情報をもとにした参考スコアです。実際の働き方は、部署・職種・上司・時期によって変わるため、応募前には必ず公式情報や面接で確認してください。
+        </p>
+      </section>
+    </main>
+
+    <div id="modalOverlay" class="modal-overlay">
+      <div class="modal">
+        <button id="modalCloseButton" class="modal-close">×</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>穴場ホワイト企業ナビ</p>
+      <p>
+        公開データをもとにした企業研究支援サイトです。求人紹介・職業紹介ではありません。
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
